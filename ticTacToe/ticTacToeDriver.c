@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
 
   srandom(time(NULL));
 
-  int gameChoice = mainMenu();
+  GameMode gameChoice = mainMenu();
   Move **board = newBoard();
   Status s = getStatus(board);
 

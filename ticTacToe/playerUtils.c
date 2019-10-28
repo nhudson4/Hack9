@@ -12,11 +12,11 @@ void userMove(Move **board, Move player) {
     scanf("%d", &input);
     if(input < 1 || input > 9) {
       printf("Error: input is out of range, try again.\n");
-    } else if(board[(input-1)/3][(input-1) % 3] != NONE) {
+    } else if(board[(input-1) / 3][(input-1) % 3] != NONE) {
       printf("Error: that choice was already made.\n");
     } else {
       //we map 1-9 to [0][0] thru [2][2]:
-      board[(input-1)/3][(input-1)] = player;
+      board[(input-1)/3][(input-1)%3] = player;
       return;
     }
     input = 0;

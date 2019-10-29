@@ -114,6 +114,8 @@ Status getStatus(Move **board) {
       for(j=0; j<3; j++) {
         if(board[i][j] != O || board[i][j] != X) {
           s = PLAYING;
+        } else {
+          s = TIE;
         }
       }
     }

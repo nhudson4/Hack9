@@ -81,6 +81,15 @@ Status getStatus(Move **board) {
 
   Status s = TIE;
 
+  int i, j;
+  for(i=0; i<3; i++) {
+    for(j=0; j<3; j++) {
+      if(board[i][j] != O || board[i][j] != X) {
+        s = PLAYING;
+      }
+    }
+  }
+
   if( //rows
       (board[0][0] == board[0][1] && board[0][1] == board[0][2] && board[0][0] == X) ||
       (board[1][0] == board[1][1] && board[1][1] == board[1][2] && board[1][0] == X) ||
@@ -106,17 +115,17 @@ Status getStatus(Move **board) {
       (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == O) ||
       (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] == O)  ) {
     s = O_WINS;
-  } else {
+  } //else {
 
     //if there are any unplayed squares, keep playing
-    int i, j;
-    for(i=0; i<3; i++) {
-      for(j=0; j<3; j++) {
-        if(board[i][j] != O || board[i][j] != X) {
-          s = PLAYING;
-        }
-      }
-    }
-  }
+    //int i, j;
+    //for(i=0; i<3; i++) {
+      //for(j=0; j<3; j++) {
+        //if(board[i][j] != O || board[i][j] != X) {
+          //s = PLAYING;
+        //}
+      //}
+    //}
+  //}
   return s;
 }

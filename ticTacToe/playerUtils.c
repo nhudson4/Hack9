@@ -74,7 +74,6 @@ void findBestMove(Move **board, int *row, int *col) {
       }
     }
   }
-
 }
 
 int numWinningCombos(Move **board, Move nextMove) {
